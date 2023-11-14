@@ -1,0 +1,26 @@
+.wrap {
+  background: #2A2F45;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 23px;
+  cursor: pointer;
+}
+
+.text-logo {
+  font-size: 16px;
+  font-family: SF-Pro-Display-Bold;
+  line-height: normal;
+}
+@media screen and (max-width: 576px) {
+  .header {
+    padding: 17px 20px;
+  }
+
+  .header.isExists {
+    display: none;
+  }
+}

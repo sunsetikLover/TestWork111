@@ -1,0 +1,94 @@
+.wrap {
+  background-color: #161B30;
+  min-height: calc(100vh - 57px);
+  padding: 80px 0 90px;
+}
+
+.wrap-input {
+  max-width: 510px;
+  margin: auto;
+  position: relative;
+}
+
+.list {
+  position: absolute;
+  background-color: #30354B;
+  width: 100%;
+  z-index: 1;
+}
+
+.city-item {
+  padding: 20px;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  cursor: pointer;
+}
+
+.city-item:hover {
+  background-color: #2A2F45;
+}
+
+.city-not-found {
+  padding: 20px;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+.input {
+  padding: 18px 20px;
+  width: 100%;
+  background-color: #2A2F45;
+  line-height: normal;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  font-family: 'SF-Pro-Display-Regular';
+
+  &::placeholder {
+    color: #8A91AB;
+  }
+}
+
+.helper-wrap {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+}
+
+.helper-wrap-inner {
+  max-width: 170px;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  left: -44px;
+  top: -10px;
+}
+
+.helper-text {
+  width: 100%;
+  color: #8A91AB;
+  line-height: normal;
+}
+
+.city {
+  color: white;
+  text-decoration: underline dotted;
+  cursor: pointer;
+}
+
+.bookmarks {
+  width: 100%;
+  color: #8A91AB;
+}
+
+.wrap-bookmarks {
+  max-width: 244px;
+  margin: 88px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}

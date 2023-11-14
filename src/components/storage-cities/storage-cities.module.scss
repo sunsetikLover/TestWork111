@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  margin-top: 55px;
+  grid-gap: 35px;
+}
+
+.card {
+  border-radius: 6px;
+  background: #292E44;
+  padding: 22px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card-title {
+  font-size: 14px;
+  line-height: 110.7%;
+  margin-bottom: 5px;
+}
+
+.card-temp {
+  text-align: center;
+  font-family: 'SF-Pro-Display-Medium';
+  font-size: 40px;
+  line-height: 110.7%;
+}
