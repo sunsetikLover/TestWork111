@@ -41,8 +41,6 @@ export const InfoWeatherCity = ({ cityName }: Props) => {
     setIsLoding(true)
     try {
       const { data } = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=201a37e4b2245471209a5e303ac84b27&lang=ru&units=metric`)
-     
-
       
       if (data) {
         setWeatherCityInfo(data)

@@ -25,3 +25,9 @@
   font-size: 40px;
   line-height: 110.7%;
 }
+
+@media screen and (max-width: 576px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
