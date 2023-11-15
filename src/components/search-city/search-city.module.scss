@@ -17,13 +17,6 @@
   z-index: 1;
 }
 
-.city-item {
-  padding: 20px;
-  text-overflow: ellipsis;
-  overflow-x: hidden;
-  cursor: pointer;
-}
-
 .city-item:hover {
   background-color: #2A2F45;
 }
@@ -91,4 +84,15 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+
+.highlight-wrap {
+  padding: 20px;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  cursor: pointer;
+}
+
+.highlight {
+  color: #8A91AB;
 }

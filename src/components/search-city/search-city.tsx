@@ -2,11 +2,12 @@
 
 import { ArrowIcon, FavoriteIcon } from '@/icons'
 import s from './search-city.module.scss'
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useDebounce, useOutsideClick } from '@/hooks'
 import { useRouter } from 'next/navigation'
 import { citiesData } from './cities.data'
 import { StorageCities } from '../storage-cities/storage-cities'
+import Highlighter from "react-highlight-words";
 
 export const SearchCity = () => {
   const [valueCity, setValueCity] = useState('')
@@ -59,12 +60,24 @@ export const SearchCity = () => {
         <div className={s['wrap-input']} ref={refList}>
           <input onFocus={focusOnInput} value={valueCity} onChange={(e) => setValueCity(e.target.value)} className={s.input} placeholder='Укажите город' type="text" />
           <div className={s.list}>
-            {(isShowListOfCities && filteredCities.length && debouncedValue.length >= 3) ? filteredCities.map((city) => <p onClick={() => push(`cities/${city}`)} key={city} className={s['city-item']}>{city}</p>
+            {(isShowListOfCities && filteredCities.length && debouncedValue.length >= 3) ? filteredCities.map((city) => (
+              <div className={s['highlight-wrap']} onClick={() => push(`cities/${city}`)} key={city}>
+                <Highlighter
+                  searchWords={[debouncedValue]}
+                  autoEscape={true}
+                  className={s.highlight}
+                  highlightStyle={{ color: 'white', backgroundColor: 'transparent' }}
+                  textToHighlight={city}
+                />
+              </div>
+            )
             ) : null}
 
             {(isShowListOfCities && !filteredCities.length && debouncedValue.length >= 3) && <p className={s['city-not-found']}>Ничего не найдено</p>}
           </div>
         </div>
+
+
 
         {favorites.length ? <StorageCities favorites={favorites} /> : null}
 
