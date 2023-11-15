@@ -3,11 +3,7 @@
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   padding: 17px 23px;
-  cursor: pointer;
 }
 
 .text-logo {
@@ -15,6 +11,15 @@
   font-family: SF-Pro-Display-Bold;
   line-height: normal;
 }
+
+.logo-wrap {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+}
+
 @media screen and (max-width: 576px) {
   .header {
     padding: 17px 20px;
