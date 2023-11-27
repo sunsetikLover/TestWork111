@@ -77,8 +77,6 @@ export const SearchCity = () => {
           </div>
         </div>
 
-
-
         {favorites.length ? <StorageCities favorites={favorites} /> : null}
 
         {(!favorites.length && !isLoading) ? <div>

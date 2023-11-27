@@ -1,0 +1,29 @@
+@import "../../styles/varibales.scss";
+
+.wrap {
+  background-color: $dark-gray;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.wrap-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
+
+.wrap-desc {
+  max-width: 500px;
+}
+
+.desc {
+  color: $light-gray;
+}
+
+.link {
+  color: $white;
+}
+

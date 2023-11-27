@@ -1,5 +1,4 @@
-'use client';
-
+import '../styles/varibales.scss'
 import '../styles/globals.scss'
 
 export default function RootLayout({
