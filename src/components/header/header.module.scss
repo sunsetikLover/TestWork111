@@ -1,15 +1,15 @@
+@import "../../styles/varibales.scss";
+
 .wrap {
-  background: #2A2F45;
+  background: $dark-blue;
 }
 
 .header {
-  padding: 17px 23px;
+  padding: 20px 23px;
 }
 
 .text-logo {
-  font-size: 16px;
-  font-family: SF-Pro-Display-Bold;
-  line-height: normal;
+  font-family: 'SF-Pro-Display-Bold';
 }
 
 .logo-wrap {

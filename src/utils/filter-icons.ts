@@ -18,7 +18,7 @@ interface Props {
   width: number
 }
 
-export const getIcon: Props[] = [
+export const getIcons: Props[] = [
   {
     name: 'Thunderstorm',
     icon: ThunderStormIcon,

@@ -11,13 +11,13 @@ interface Props {
 export const Header = ({ isExists = true }) => {
   const { push } = useRouter()
   return (
-    <div className={s.wrap}>
+    <header className={s.wrap}>
       <div className={`${s.header} ${!isExists && s.isExists}`}>
         <div className={s['logo-wrap']} onClick={() => push('/')}>
           <LogoIcon />
           <p className={s['text-logo']}>WeatherCheck</p>
         </div>
       </div>
-    </div>
+    </header>
   )
 }

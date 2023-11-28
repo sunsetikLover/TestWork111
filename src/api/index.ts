@@ -1,1 +1,1 @@
-export { BaseService, axiosBase } from './axios'
+export * from './axios'

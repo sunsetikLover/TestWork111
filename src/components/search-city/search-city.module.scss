@@ -1,57 +1,61 @@
+@import "../../styles/varibales.scss";
+
 .wrap {
-  background-color: #161B30;
   min-height: calc(100vh - 57px);
-  padding: 80px 0 90px;
+  padding: 86px 0 90px;
+  background-color: #161B30;
 }
 
 .wrap-input {
-  max-width: 510px;
-  margin: auto;
   position: relative;
+  margin: auto;
+  max-width: 510px;
 }
 
 .list {
   position: absolute;
-  background-color: #30354B;
-  width: 100%;
   z-index: 1;
+  width: 100%;
+  overflow-y: auto;
+  max-height: 300px;
+  background-color: #30354B;
 }
 
-.city-item:hover {
-  background-color: #2A2F45;
+.highlight-wrap:hover {
+  background-color: $dark-blue;
 }
 
-.city-not-found {
+.city-helper {
+  overflow-x: hidden;
   padding: 20px;
   text-overflow: ellipsis;
-  overflow-x: hidden;
 }
 
 .input {
-  padding: 18px 20px;
   width: 100%;
-  background-color: #2A2F45;
-  line-height: normal;
+  padding: 18px 20px;
   border: none;
   outline: none;
-  color: white;
-  font-size: 16px;
+  background-color: $dark-blue;
   font-family: 'SF-Pro-Display-Regular';
+  line-height: normal;
+  color: $white;
+  font-size: 16px;
 
   &::placeholder {
-    color: #8A91AB;
+    color: $light-gray;
   }
 }
 
 .helper-wrap {
-  margin-top: 26px;
   display: flex;
   justify-content: center;
+  margin-top: 44px;
 }
 
 .helper-wrap-inner {
-  max-width: 170px;
   position: relative;
+  max-width: 170px;
 }
 
 .icon {
@@ -62,37 +66,44 @@
 
 .helper-text {
   width: 100%;
-  color: #8A91AB;
+  color: $light-gray;
   line-height: normal;
 }
 
 .city {
-  color: white;
-  text-decoration: underline dotted;
   cursor: pointer;
+  color: $white;
+  text-decoration: underline dotted;
 }
 
 .bookmarks {
   width: 100%;
-  color: #8A91AB;
+  color: $light-gray;
 }
 
 .wrap-bookmarks {
-  max-width: 244px;
   margin: 88px auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 32px;
+  max-width: 244px;
 }
 
 .highlight-wrap {
-  padding: 20px;
-  text-overflow: ellipsis;
   overflow-x: hidden;
   cursor: pointer;
+  padding: 20px;
+  text-overflow: ellipsis;
 }
 
 .highlight {
-  color: #8A91AB;
+  color: $light-gray;
 }
+
+@media screen and (max-width: 576px) {
+  .wrap {
+    padding-top: 30px;
+  }
+}
+

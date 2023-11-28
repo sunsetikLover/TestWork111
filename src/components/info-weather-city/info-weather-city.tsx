@@ -1,12 +1,11 @@
 "use client"
 
-import { CityWeatherInfoTypes } from '@/types'
+import { ApiMethods, CityWeatherInfoTypes } from '@/types'
 import s from './info-weather-city.module.scss'
-import { ArrowBackIcon, BarometrIcon, FavoriteIcon } from '@/icons'
+import { ArrowBackIcon, BarometrIcon, FavoriteIcon, ActiveFavoriteIcon } from '@/icons'
 import React, { useEffect, useState } from 'react'
-import { ActiveFavoriteIcon } from '@/icons/active-favorite'
 import Link from 'next/link'
-import { getFormattedTime, getIcon } from '@/utils'
+import { WEATHER_API, WEATHER_API_KEY, getFormattedTime, getIcons } from '@/utils'
 import axios from 'axios'
 
 interface Props {
@@ -40,8 +39,11 @@ export const InfoWeatherCity = ({ cityName }: Props) => {
   const getWeatherInfo = async () => {
     setIsLoding(true)
     try {
-      const { data } = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=201a37e4b2245471209a5e303ac84b27&lang=ru&units=metric`)
-      
+      const { data } = await axios.get(`${WEATHER_API}${ApiMethods.Weather}?q=${cityName}&APPID=${WEATHER_API_KEY}&lang=ru&units=metric`)
+
+      // появляется ошибка с корсами, хотя запрос ничем не отличается от того, который выше
+      // const { data } = await WeatherService.getWeatherByCityName(cityName)
+
       if (data) {
         setWeatherCityInfo(data)
         const existingFavorites: CityWeatherInfoTypes[] = JSON.parse(localStorage.getItem("favorites") || '[]') || []
@@ -54,8 +56,7 @@ export const InfoWeatherCity = ({ cityName }: Props) => {
           setIsFavorite(true)
         }
       }
-    } catch (error) {
-
+    } catch {
     } finally {
       setIsLoding(false)
     }
@@ -87,7 +88,7 @@ export const InfoWeatherCity = ({ cityName }: Props) => {
 
         <div className={s['main-content']}>
           <div className={s['title-wrap']}>
-            <h4 className={s.title}>{weatherCityInfo?.name}</h4>
+            <h1 className={s.title}>{weatherCityInfo?.name}</h1>
           </div>
           <div className={s['title-desc-wrap']}>
             <p className={s['title-desc']}>{weatherCityInfo.weather[0].description}</p>
@@ -97,7 +98,7 @@ export const InfoWeatherCity = ({ cityName }: Props) => {
             <p className={s['text-temp']}>
               {Math.round(weatherCityInfo.main.temp)} &deg;
             </p>
-            {getIcon.length && getIcon.map(({ icon, name }, id) => {
+            {getIcons.length && getIcons.map(({ icon, name }, id) => {
               const Svg = icon;
               return (
                 <React.Fragment key={name}>

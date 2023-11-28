@@ -1,25 +1,32 @@
+@import "../../styles/varibales.scss";
+.wrap {
+  margin: 55px auto 0;
+  max-width: 872px;
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-  margin-top: 55px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 35px;
+  row-gap: 30px;
 }
 
 .card {
-  border-radius: 6px;
-  background: #292E44;
-  padding: 22px;
-  text-align: center;
   cursor: pointer;
+  padding: 19px;
+  border-radius: 6px;
+  background: $deep-dark-blue;
+  text-align: center;
 }
 
 .card-title {
-  font-size: 14px;
+  margin-bottom: 14px;
   line-height: 110.7%;
-  margin-bottom: 5px;
+  font-size: 14px;
 }
 
 .card-temp {
+  margin-bottom: 17px;
   text-align: center;
   font-family: 'SF-Pro-Display-Medium';
   font-size: 40px;
@@ -28,6 +35,13 @@
 
 @media screen and (max-width: 576px) {
   .grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-gap: 20px;
+    row-gap: 20px;
+  }
+
+  .wrap {
+    margin-top: 40px;
+    max-width: 872px;
   }
 }
