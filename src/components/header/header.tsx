@@ -8,7 +8,7 @@ interface Props {
   isExists?: boolean
 }
 
-export const Header = ({ isExists = true }) => {
+export const Header = ({ isExists = true }: Props) => {
   const { push } = useRouter()
   return (
     <header className={s.wrap}>

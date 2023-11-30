@@ -3,7 +3,7 @@
 .wrap {
   min-height: calc(100vh - 57px);
   padding: 86px 0 90px;
-  background-color: #161B30;
+  background-color: $dark-gray;
 }
 
 .wrap-input {
@@ -18,7 +18,7 @@
   width: 100%;
   overflow-y: auto;
   max-height: 300px;
-  background-color: #30354B;
+  background-color: $dim-dark-blue;
 }
 
 .highlight-wrap:hover {
@@ -106,4 +106,3 @@
     padding-top: 30px;
   }
 }
-
