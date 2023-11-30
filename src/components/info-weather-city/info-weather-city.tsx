@@ -69,7 +69,6 @@ export const InfoWeatherCity = ({ cityName }: Props) => {
     }
   }, [])
 
-
   return (
     <div className={s.wrap}>
       {isLoading && <p>Загрузка...</p>}
