@@ -123,11 +123,13 @@ export const Home = () => {
             </div>
           </div>
 
-          <Link className={s.link} href="/favorites">
-            <button type="button" className="btn btn-primary">
-              Избранные города
-            </button>
-          </Link>
+          <div className={s['wrap-link']}>
+            <Link className={s.link} href="/favorites">
+              <button type="button" className="btn btn-primary">
+                Избранные города
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </>

@@ -26,24 +26,24 @@ export const FavoriteCities = () => {
         <div className={s.grid}>
           {favorites.length > 0
             ? favorites.map((element) => (
-              <div
-                onClick={() => push(`cities/${element.name}`)}
-                key={element.id}
-                className={s.card}
-              >
-                <p className={s['card-title']}>{element.name}</p>
-                <p className={s['card-temp']}>
-                  {Math.round(element.main.temp)} &deg;
-                </p>
+                <div
+                  onClick={() => push(`cities/${element.name}`)}
+                  key={element.id}
+                  className={s.card}
+                >
+                  <p className={s['card-title']}>{element.name}</p>
+                  <p className={s['card-temp']}>
+                    {Math.round(element.main.temp)} &deg;
+                  </p>
 
-                <Image
-                  src={url}
-                  alt={favorites[0].weather[0].description}
-                  height={200}
-                  width={200}
-                />
-              </div>
-            ))
+                  <Image
+                    src={url}
+                    alt={favorites[0].weather[0].description}
+                    height={200}
+                    width={200}
+                  />
+                </div>
+              ))
             : null}
         </div>
       </div>

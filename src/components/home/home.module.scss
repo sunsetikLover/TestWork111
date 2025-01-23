@@ -87,10 +87,13 @@
   color: $light-gray;
 }
 
-.link {
-  display: inline-block;
+.wrap-link {
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
-  width: 100%;
+}
+
+.link {
   text-align: center;
   color: $white;
 }
