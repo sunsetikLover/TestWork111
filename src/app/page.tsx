@@ -1,17 +1,12 @@
-import { Header, SearchCity } from "@/components";
+import type { Metadata } from 'next';
 
-import type { Metadata } from 'next'
+import { Home } from '@/components';
 
 export const metadata: Metadata = {
   title: 'Главная',
   description: 'Сайт о погоде',
-}
+};
 
-export default function Home() {
-  return (
-    <>
-      <Header />
-      <SearchCity />
-    </>
-  )
+export default function HomePage() {
+  return <Home />;
 }

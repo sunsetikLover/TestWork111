@@ -1,24 +1,19 @@
-'use client'
+'use client';
 
-import { NotFoundPage } from '@/components'
+import type { Metadata } from 'next';
 
-import type { Metadata } from 'next'
+import { NotFoundPage } from '@/components';
 
 export const metadata: Metadata = {
   title: 'Ошибка',
   description: 'Непредвиденная ситуация',
-}
+};
 
 export default function Error({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   error,
 }: {
-  error: Error & { digest?: string }
+  error: Error & { digest?: string };
 }) {
-  // useEffect(() => {
-  //   console.error(error)
-  // }, [error])
-
-  return (
-    <NotFoundPage />
-  )
+  return <NotFoundPage />;
 }

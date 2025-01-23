@@ -1,4 +1,4 @@
-import { SVGProps } from "react"
+import { SVGProps } from 'react';
 
 export const ActiveFavoriteIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -17,4 +17,4 @@ export const ActiveFavoriteIcon = (props: SVGProps<SVGSVGElement>) => (
       d="M2.333 1.25c-.31 0-.606.132-.825.366a1.297 1.297 0 0 0-.341.884v15.708l5.51-3.103a.556.556 0 0 1 .646 0l5.51 3.103V2.5c0-.331-.123-.65-.341-.884a1.129 1.129 0 0 0-.825-.366H2.333Z"
     />
   </svg>
-)
+);

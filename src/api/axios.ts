@@ -1,33 +1,35 @@
-import axios from 'axios'
-import { Component } from 'react'
-import { AxiosRequestConfig } from 'axios'
-import { CITIES_API, WEATHER_API } from '@/utils'
+import axios, { AxiosRequestConfig } from 'axios';
+import { Component } from 'react';
+
+const WEATHER_API = process.env.NEXT_PUBLIC_WEATHER_API;
+const CITIES_API = process.env.NEXT_PUBLIC_CITIES_API;
+const CITIES_API_KEY = process.env.NEXT_PUBLIC_CITIES_API_KEY;
+const WEATHER_API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
 
 export const weatherAxiosBase = axios.create({
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  withCredentials: true,
   baseURL: WEATHER_API,
-})
+  params: {
+    appid: WEATHER_API_KEY,
+  },
+});
 
 export const citiesAxiosBase = axios.create({
   headers: {
     'Content-Type': 'application/json',
-    'X-RapidAPI-Key': '9764761c52mshc90d508614f9472p1c70f9jsn6af5ca78f7e1',
+    'X-RapidAPI-Key': CITIES_API_KEY,
   },
   withCredentials: true,
   baseURL: CITIES_API,
-})
+});
 
 export class WeatherBaseService extends Component {
   public static async fetch<T>(props: AxiosRequestConfig) {
-    return await weatherAxiosBase.request<T>(props)
+    return await weatherAxiosBase.request<T>(props);
   }
 }
 
 export class CitiesBaseService extends Component {
   public static async fetch<T>(props: AxiosRequestConfig) {
-    return await citiesAxiosBase.request<T>(props)
+    return await citiesAxiosBase.request<T>(props);
   }
 }

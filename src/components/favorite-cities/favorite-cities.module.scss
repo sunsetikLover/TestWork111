@@ -1,10 +1,22 @@
-@import "../../styles/varibales.scss";
+@use '../../styles/variables.scss' as *;
+
+.title {
+  margin: 30px 0;
+  opacity: 0.5;
+}
+
 .wrap {
-  margin: 55px auto 0;
-  max-width: 872px;
+  padding: 55px 0;
+  min-height: 100vh;
+  background-color: $dark-gray;
+}
+
+.link {
+  color: $white;
 }
 
 .grid {
+  margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 35px;
@@ -15,7 +27,7 @@
   cursor: pointer;
   padding: 19px;
   border-radius: 6px;
-  background-color: rgba(41,46,68, 0.5);
+  background-color: rgb(41 46 68 / 50%);
   opacity: 0.5;
   text-align: center;
 }
@@ -29,12 +41,12 @@
 .card-temp {
   margin-bottom: 17px;
   text-align: center;
-  font-family: 'SF-Pro-Display-Medium';
+  font-family: SF-Pro-Display-Medium, sans-serif;
   font-size: 40px;
   line-height: 110.7%;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (width <= 576px) {
   .grid {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     grid-gap: 20px;

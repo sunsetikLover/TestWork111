@@ -1,5 +1,7 @@
-export { Header } from './header/header'
-export { SearchCity } from './search-city/search-city'
-export { InfoWeatherCity } from './info-weather-city/info-weather-city'
-export { StorageCities } from './storage-cities/storage-cities'
-export { NotFoundPage } from './not-found-page/not-found-page'
+export { FavoriteCities } from './favorite-cities/favorite-cities';
+export { Header } from './header/header';
+export { Home } from './home/home';
+export { NotFoundPage } from './not-found-page/not-found-page';
+export { ForecastCard } from './weather-card/forecast-card/forecast-card';
+export { WeatherCard } from './weather-card/weather-card';
+export { GoBack } from './go-back/go-back';

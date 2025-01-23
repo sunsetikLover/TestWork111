@@ -1,15 +1,17 @@
-"use client"
+'use client';
 
-import { useRouter } from 'next/navigation'
-import s from './header.module.scss'
-import { LogoIcon } from "@/icons"
+import { useRouter } from 'next/navigation';
+
+import { LogoIcon } from '@/icons';
+
+import s from './header.module.scss';
 
 interface Props {
-  isExists?: boolean
+  isExists?: boolean;
 }
 
 export const Header = ({ isExists = true }: Props) => {
-  const { push } = useRouter()
+  const { push } = useRouter();
   return (
     <header className={s.wrap}>
       <div className={`${s.header} ${!isExists && s.isExists}`}>
@@ -19,5 +21,5 @@ export const Header = ({ isExists = true }: Props) => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};

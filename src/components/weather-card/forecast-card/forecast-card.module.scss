@@ -1,0 +1,26 @@
+.wrap {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.wrap-card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 200px;
+  text-align: center;
+}
+
+.card-desc {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  gap: 5px;
+}

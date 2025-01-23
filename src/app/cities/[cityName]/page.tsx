@@ -1,31 +1,22 @@
-import { Header, InfoWeatherCity } from "@/components"
-import { CityWeatherInfoTypes } from "@/types"
-import axios from "axios"
-import { Metadata } from "next"
+import { WeatherCard } from '@/components';
 
 interface Props {
-  cityName: string
+  params: Promise<{ cityName: string }>;
 }
 
-export async function generateMetadata(
-  { params }: { params: Props },
-): Promise<Metadata> {
+export const generateMetadata = async ({ params }: Props) => {
+  const { cityName } = await params;
 
-  const { data }: { data: CityWeatherInfoTypes } = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${params.cityName}&APPID=201a37e4b2245471209a5e303ac84b27&lang=ru&units=metric`)
+  const decodeCityName = decodeURIComponent(cityName);
 
   return {
-    title: data.name,
-    description: data.weather[0].description
-  }
-}
+    title: `${decodeCityName}`,
+    description: `Прогноз погоды в городе ${decodeCityName}.`,
+  };
+};
 
+export default async function CityWeatherInfo({ params }: Props) {
+  const { cityName } = await params;
 
-export default function CityWeatherInfo({ params }: { params: Props }) {
-  const { cityName } = params
-
-  return (<>
-    <Header isExists={false} />
-    {cityName && <InfoWeatherCity cityName={cityName} />}
-  </>
-  )
+  return <>{cityName && <WeatherCard cityName={cityName} />}</>;
 }

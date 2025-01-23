@@ -1,4 +1,4 @@
-@import "../../styles/varibales.scss";
+@use '../../styles/variables.scss' as *;
 
 .wrap {
   display: flex;
@@ -31,7 +31,7 @@
   color: $white;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (width <= 576px) {
   .title {
     font-size: 36px;
   }

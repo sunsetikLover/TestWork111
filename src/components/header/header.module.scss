@@ -1,4 +1,4 @@
-@import "../../styles/varibales.scss";
+@use '../../styles/variables.scss' as *;
 
 .wrap {
   background: $dark-blue;
@@ -9,7 +9,7 @@
 }
 
 .text-logo {
-  font-family: 'SF-Pro-Display-Bold';
+  font-family: SF-Pro-Display-Bold, sans-serif;
 }
 
 .logo-wrap {
@@ -20,7 +20,7 @@
   width: fit-content;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (width <= 576px) {
   .header__content {
     padding: 17px 20px;
     background-color: $dark-gray;

@@ -1,2 +1,2 @@
-export { WeatherService } from './weather'
-export { CitiesService } from './cities'
+export { CitiesService } from './cities';
+export { WeatherService } from './weather';

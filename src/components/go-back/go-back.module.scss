@@ -1,0 +1,12 @@
+@use '../../styles/variables.scss' as *;
+
+.wrap-back {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.back {
+  color: $light-gray;
+  line-height: 110.7%;
+}
